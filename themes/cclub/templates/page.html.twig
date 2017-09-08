@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Coral</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+	<script src="js/bootstrap.js" ></script>
+
+	<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+
+<header>
+<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-sm-4 col-xs-6">
+			<div class="logo">
+				<a href="/"><img src="{{directory}}/images/logo.png" alt="" class="img-responsive" ></a>
+			</div>
+			</div>
+			<div class="col-md-3 col-sm-5 hidden-xs"><p id="descr" class ="text-header text-center"> {{ site_name }}Сайт независимого <br> Дистрибютора</p></div>
+			<div class="col-md-3 col-sm-3 tels">
+				<p class="phones"><a href="tel:" class="tel">+38 (066) 555-22-11</a></p>
+				<p class="phones"><a href="tel:" class="tel">+38 (097) 555-22-11</a></p>
+				<p class="phones"><a href="tel:" class="tel">+38 (093) 555-22-11</a></p>
+			</div>
+
+			<div class="col-md-2 order-button"><a href="/"><button class="order-call">Заказать звонок</button></a></div>
+		</div>
+	</div>
+</header>
+
+
+
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container">
+	<!—Название сайта и кнопка раскрытия меню для мобильных-->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>Меню
+        <span class="icon-bar"></span>
+      </button>
+
+    </div>
+
+
+
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Пункт 1</a></li>
+        <li><a href="#">Пункт 2</a></li>
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Выпадающий пункт <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Подпункт</a></li>
+            <li><a href="#">Еще подпункт</a></li>
+            <li><a href="#">Еще что-то</a></li>
+            <li class="divider"></li>
+            <li><a href="#">И еще</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Пункт 4</a></li>
+        <li><a href="#">Пункт 5</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+	</div>
+</nav>
+
+</header>
+
+
+
+
+
+
+
+<section class="content-section">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 content-class">
+
+
+			{# Sidebar First #}
+      			{% if page.sidebar_first %}
+        			{% block sidebar_first %}
+          				<aside class="col-sm-3" role="complementary">
+            				{{ page.sidebar_first }}
+          				</aside>
+        			{% endblock %}
+      		{% endif %}
+
+		{# Content #}
+      {%
+        set content_classes = [
+          page.sidebar_first and page.sidebar_second ? 'col-sm-6',
+          page.sidebar_first and page.sidebar_second is empty ? 'col-sm-9',
+          page.sidebar_second and page.sidebar_first is empty ? 'col-sm-9',
+          page.sidebar_first is empty and page.sidebar_second is empty ? 'col-sm-12'
+        ]
+      %}
+      <section{{ content_attributes.addClass(content_classes) }}>
+
+        {# Highlighted #}
+        {% if page.highlighted %}
+          {% block highlighted %}
+            <div class="highlighted">{{ page.highlighted }}</div>
+          {% endblock %}
+        {% endif %}
+
+        {# Breadcrumbs #}
+        {% if breadcrumb %}
+          {% block breadcrumb %}
+            {{ breadcrumb }}
+          {% endblock %}
+        {% endif %}
+
+        {# Action Links #}
+        {% if action_links %}
+          {% block action_links %}
+            <ul class="action-links">{{ action_links }}</ul>
+          {% endblock %}
+        {% endif %}
+
+        {# Help #}
+        {% if page.help %}
+          {% block help %}
+            {{ page.help }}
+          {% endblock %}
+        {% endif %}
+
+        {# Content #}
+        {% block content %}
+          <a id="main-content"></a>
+          {{ page.content }}
+        {% endblock %}
+      </section>
+
+
+		</div>
+	</div>
+</div>
+</section>
+
+<section class="my-footer-wrapp">
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 my-footer">
+
+{% if page.footer %}
+  {% block footer %}
+    <footer class="footer {{ container }}" role="contentinfo">
+      {{ page.footer }}
+    </footer>
+  {% endblock %}
+{% endif %}
+
+		</div>
+	</div>
+</div>
+</section>
+
+
+<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> <!-- 16 KB -->
+</body>
+</html>

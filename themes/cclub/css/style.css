@@ -1,0 +1,153 @@
+body{
+	font-family: Tahoma;
+	line-height: 1.6;
+	font-size:16px;
+}
+p{
+    font-family: Tahoma;
+    line-height: 1.6;
+    font-size:16px;
+}
+a{
+
+}
+
+
+
+
+/************HEADER**********//************HEADER**********//************HEADER**********/
+ #descr{
+font-size: 2em;
+color:#7e971c;
+height: 85px;
+margin-top:20px;
+margin-left: -67px;
+}
+.tels{
+	height: 80px;
+	margin-top: 20px;
+}
+.phones a{
+color:#000;
+font-size:18px;
+line-height: 6px;
+}
+
+
+.order-call{
+	    width: 202px;
+    font-size: 18px;
+    height: 40px;
+    margin-top: 40px;
+    border: 1px solid #7d9618;
+    background-color: #7d9618;
+    color: #fff;
+    margin-left: -15px;
+}
+.order-call:hover, .disc:hover{
+	-webkit-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+/************NAVIGATION**********//************NAVIGATION**********//************NAVIGATION**********/
+.navbar-nav>li{
+font-size: 17px;
+
+
+}
+.navbar-default {
+     background-color: #859e21;
+     //border-color: #859e21;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #859e21;
+}
+
+body > nav > div > div.navbar-header > button{
+	border: 1px solid #f6f6f6;
+	color:black;
+	background-color:#f6f6f6;
+}
+
+/************SEARCH**********//************SEARCH**********//************SEARCH**********/
+.search-area{
+	background-color: #ededed;
+	border-radius: 6px;
+	height: 70px;
+}
+
+
+.search-input{
+	border-radius: 13px;
+    margin-top: 20px;
+    box-shadow: none;
+    width: 328px;
+    height: 30px;
+}
+
+
+.submit-btn{
+	border-radius: 10px;
+    color: white;
+    box-shadow: none;
+    background-color: #7d9618;
+    border: 0;
+    height: 30px;
+    width: 89px;
+}
+
+.discont-p{
+	    color: #32887e;
+    font-size: 20px;
+    margin-top: 5px;
+
+}
+.disc a:hover{
+    text-decoration: none;
+}
+.disc{
+border: 1px solid #106158;
+background-color: #106158;
+font-weight: bold;
+    color: white;
+    font-size: 21px;
+    padding: 5px
+}
+.disc-wr{
+margin-top: 20px;
+margin-right: 0;
+border-radius: 13px;
+}
+
+/*******SLIDER*********/
+.slider-block{
+	margin-top: 20px;
+}
+
+.main-slider{
+height: 417px;
+}
+
+
+
+
+/*****BLOCKS*****/
+.block-wrap{
+
+}
+
+
+.content-class{
+    margin-top:20px;
+}
+
+.my-footer-wrapp{
+    margin-top:30px;
+    background-image: url('../images/bg.gif');
+}
